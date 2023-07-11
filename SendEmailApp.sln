@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailConsoleApp", "SendEmailConsoleApp\SendEmailConsoleApp.csproj", "{C43A57D0-409B-48B5-B5B6-74E9ED652D94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailClassLibrary", "SendEmailClassLibrary\SendEmailClassLibrary.csproj", "{C232C6C2-5505-4CFD-83F7-077C777F8DEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C43A57D0-409B-48B5-B5B6-74E9ED652D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43A57D0-409B-48B5-B5B6-74E9ED652D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43A57D0-409B-48B5-B5B6-74E9ED652D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43A57D0-409B-48B5-B5B6-74E9ED652D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C232C6C2-5505-4CFD-83F7-077C777F8DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C232C6C2-5505-4CFD-83F7-077C777F8DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C232C6C2-5505-4CFD-83F7-077C777F8DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C232C6C2-5505-4CFD-83F7-077C777F8DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02FF4F96-1C07-426D-B5A1-980C3E5AA9B2}
+	EndGlobalSection
+EndGlobal
