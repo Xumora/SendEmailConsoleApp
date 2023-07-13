@@ -1,12 +1,22 @@
 ﻿using SendEmailClassLibrary;
 using SendEmailClassLibrary.Models;
-using SendEmailClassLibrary.Services;
+using Microsoft.Extensions.Configuration;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
+        var builder = new ConfigurationBuilder();
+        builder.SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+        IConfiguration config = builder.Build();
+
         EmailDto mail = new EmailDto();
+        EmailConfig mailConfig = new EmailConfig();
+
+        mailConfig.email = config.GetSection("EmailConfig").GetSection("Email").Value;
+        mailConfig.password = config.GetSection("EmailConfig").GetSection("Password").Value;
 
         Console.WriteLine("Mail To");
         mail.To = Console.ReadLine();
@@ -17,9 +27,7 @@ internal class Program
         Console.WriteLine("Your Message");
         mail.Body = Console.ReadLine();
 
-        IEmailService emailService = new EmailService();
-        SendEmailClass sendEmailClass = new SendEmailClass(emailService);
-
-        sendEmailClass.SendEmail(mail);
+        SendEmailClass sendEmailClass = new SendEmailClass();
+        sendEmailClass.SendEmail(mail, mailConfig);
     }
 }
