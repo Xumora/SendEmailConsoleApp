@@ -1,15 +1,17 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using SendEmailClassLibrary.Models;
+﻿using SendEmailClassLibrary.Models;
 using SendEmailClassLibrary.Services;
 
 namespace SendEmailClassLibrary
 {
     public class SendEmailClass
     {   
-        public void SendEmail(EmailDto request, EmailConfig config)
+        private readonly IEmailService _emailService;
+        public SendEmailClass(IEmailService emailService) { 
+            _emailService = emailService;
+        }
+        public void SendEmail(EmailDto request)
         {
-            IEmailService emailService = ServiceCollectionExtension.GetServiceProvider().GetService<IEmailService>();
-            emailService.SendEmail(request, config);
+            _emailService.SendEmail(request);
         }
     }
 }
